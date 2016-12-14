@@ -1,0 +1,23 @@
+{
+  "name": "freeboxd.github.io",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "author": "Guilherme Martins",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.1",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-jsonminify": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp-uglify": "^2.0.0",
+    "jeet": "^7.0.0",
+    "jquery": "^3.1.1",
+    "nib": "^1.1.2",
+    "rupture": "^0.6.2"
+  }
+}

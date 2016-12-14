@@ -1,0 +1,269 @@
+@import '_variables'
+@import 'nib'
+@import 'vendors/jquery.fullpage.min.css'
+
+*,
+&:before,
+&:after
+	box-sizing border-box
+	margin 0
+	padding 0
+	
+::selection
+	background grey
+
+html
+	font-size 16px
+
+body
+	background black
+	color white
+	font-family Droid Sans, Helvetica, sans-serif
+	a
+		text-decoration none
+
+.header
+	position fixed
+	display block
+	width 100%
+	z-index 99
+	&__container
+		align-items center
+		center(1200px)
+		display flex
+		position relative
+		
+.logo
+	margin -7rem auto 0
+	position relative
+	text-align center
+	width 13rem
+	height 13rem
+	&__anchor
+		background transparent
+		position absolute
+		border-radius 50%
+		top 0
+		left 0
+		transition 150ms linear
+		height 100%
+		width 100%
+		&:hover
+			top .5rem
+		&:before
+			background white
+			border-radius 50%
+			content ''
+			position absolute
+			left 0
+			height 100%
+			width 100%
+			z-index -1
+	&--letter
+		color black
+		font-family Playfair Display
+		font-size 5rem
+		font-weight bold
+		position absolute
+		top 7rem
+		left 0
+		right 0
+		z-index -1
+
+.lead-text
+	font-family Playfair Display
+	font-weight bold
+	font-size 1.8rem
+
+.nav-bar
+	flex 1
+	text-align right
+
+.main-nav
+	display inline-block
+	margin-top 1.2rem
+	&--item
+		display inline-block
+		a
+			color white
+			font-weight bold
+			margin-left 2rem
+			&:hover
+				text-decoration underline
+
+.social-media
+	flex 1
+	text-align right
+
+.main-nav,
+.social-media
+	list-style none
+	
+//
+// - main-content
+//=========================================
+
+.main-content
+	display block
+
+//
+// - main-content > presentation
+//=========================================
+	
+
+.main-section
+	center(1200px)
+	position relative
+
+.description
+	margin-top 4rem
+	text-align center
+	&__text
+		font-family Playfair Display, sans-serif
+		font-size 2rem
+	&__heading
+		background #191919
+		color #00ff5c
+		display inline-block
+		font-family Open Sans, sans-serif
+		font-size 5rem
+		line-height 5rem
+		letter-spacing 1.5rem
+		text-transform uppercase
+		margin 0 -1.5rem .4rem 0
+		padding-left 1.5rem
+
+//
+// - main-content > content
+//=========================================
+
+.box
+	background white
+	color black
+	&__container
+		center(960px)
+		display flex
+	&--header
+		border-top 5px solid #ef2828
+		flex 1
+	&--heading
+		font-family Playfair Display, sans-serif
+		font-size 1.7rem
+		font-weight bold
+	&--content
+		flex 5
+		margin-left 2rem
+		
+//
+// - main-content > pages
+//=========================================
+
+.page
+	align-items center
+	display flex
+
+.page-lead,
+.page-lead-anchor
+	color white
+	font-size 3rem
+
+.page-lead-anchor
+	font-weight bold
+	&:hover
+		color #00ff5c
+		text-decoration underline
+
+.page--content
+	flex 1
+	padding-left 3rem
+
+.fp-table-cell
+	overflow none
+
+.slide
+	overflow hidden
+	
+//
+// - main-content > about-me
+//=========================================
+	
+.my-photo
+	flex .5
+	right -35%
+	position absolute
+	z-index -1
+	img
+		width 83%
+		border-radius 50%
+		// opacity .85
+
+
+.info-paragraph
+	font-family Open Sans, sans-serif
+	font-size 1.4rem
+	font-weight lighter
+	line-height 2rem
+	margin-top 1rem
+	padding-right 25rem
+
+//
+// - main-content > my-works
+//=========================================
+
+// .card-list
+	// display flex
+		
+
+.card
+	column(1/2, $gutter: 0)
+	height 14rem
+	display block
+	// flex 1
+	// margin-bottom 2rem
+	// overflow hidden
+	&--img
+		// background grey
+		height 14rem
+
+//
+// - main-content > blog
+//=========================================
+
+// .blog-post
+// 	margin-bottom 4rem
+// 	&--date
+// 		font-size .9rem
+// 	&--heading
+// 		color
+// 		font-size 1.8rem
+// 		margin-top .5rem
+// 	&--anchor
+// 		color black
+// 		transition 100ms linear
+// 		&:hover
+// 			text-decoration underline
+// 	p
+// 		font-size 1rem
+// 		line-height 2.3rem
+// 		margin 2rem 0
+// 	&--read-more
+// 		color black
+// 		font-size .8rem
+// 		font-weight bold
+// 		padding .5rem 0
+// 		text-transform uppercase
+// 		transition 120ms linear
+// 		&:hover
+// 			text-decoration underline
+// 			padding-left 1rem
+
+// .more-blog-posts
+// 	border 3px solid black
+// 	color black
+// 	font-weight bold
+// 	padding .6rem 1.3rem
+// 	text-transform uppercase
+// 	transition 100ms linear
+// 	&:hover
+// 		border-color #ef2828
+// 		color #ef2828

@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#fullpage").fullpage({anchors:["home","pages","contact"],sectionsColor:["#000","#000","#fff"],controlArrows:!1})});
