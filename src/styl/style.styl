@@ -27,6 +27,7 @@ body
 	background black
 	color white
 	font-family Droid Sans, Helvetica, sans-serif
+	font-size 16px
 	a
 		text-decoration none
 		
@@ -124,6 +125,8 @@ body
 	margin-top 1.2rem
 	&--item
 		display inline-block
+	+below(770px)
+		display none
 
 .main-nav--anchor
 	color white
@@ -141,8 +144,42 @@ body
 	text-align right
 
 .main-nav,
+.main-nav-lg,
 .social-media
 	list-style none
+	
+.menu-icon
+	background white
+	border-radius 0
+	border 0
+	cursor pointer
+	display block
+	margin 1.3rem 0 0
+	padding 0
+	width 54px
+	height 54px
+	position relative
+	&__bars,
+	&__bars:before,
+	&__bars:after
+		background black
+		border-radius 5px
+		display block
+		width 38px
+		height 6px
+		position relative
+		margin 0 auto
+	&__bars:before,
+	&__bars:after
+		content ''
+		position absolute
+		margin 0 auto
+	&__bars:before
+		transform translate3d(0,-11px,0)
+	&__bars:after
+		transform translate3d(0,11px,0)
+	+above(770px)
+		display none
 	
 //
 // - main-content
@@ -150,7 +187,6 @@ body
 
 .main-content
 	display block
-
 
 //
 // - main-content > presentation
@@ -223,13 +259,12 @@ body
 	+below(760px)
 		text-align center
 
-.page-lead,
-.page-lead-anchor
+.page-lead
 	font-size 3rem
-		
-
+	
 .page-lead-anchor
 	color black
+	font-size 3em
 	font-weight bold
 	&:hover
 		color white
@@ -302,14 +337,14 @@ body
 		padding-left 8%
 		padding-right 8%
 
-
 .work-tags
 	display inline-block
-	font-size .8rem
+	font-size .8em
 	margin-top 1rem
 
 .work-single-tag
 	text-transform uppercase
+	line-height 1.5em
 	&:not(:last-child)::after
 		content '/'
 		margin 0 .8rem

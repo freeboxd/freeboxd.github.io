@@ -43,6 +43,22 @@ $(document).ready(function() {
       else { // retorna navegação ao branco
 				$('.main-nav--anchor').removeClass('black');
       }
+
+      // ao abrir #pages (menu grande)
+      if(anchorLink == 'pages') {
+			// esconde menu-icon
+				$('[data-trigger="openMenu"]').hide();
+      }
+      else {
+				$('[data-trigger="openMenu"]').show();
+			}
+
+			if(anchorLink == 'my-works') {
+				$.fn.fullpage.moveTo('my-works', 1);
+			}
 		}
   });
+	$('[data-trigger="openMenu"]').on('click', function() {
+		$.fn.fullpage.silentMoveTo('pages');
+	});
 });
