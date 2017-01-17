@@ -20,18 +20,18 @@
 
 		<header class="header">
 			<div class="header__container">
-				<div class="logo">
+				<div class="logo logo-lg">
 					<a href="#home" class="logo__anchor">
 					</a>
 					<span class="logo--letter">G</span>
 				</div>
 				<nav class="nav-bar" role="nav-bar">
 					<ul class="main-nav">
-						<li class="main-nav--item"><a href="#home">home</a></li>
-						<li class="main-nav--item"><a href="#pages/about-me">about me</a></li>
-						<li class="main-nav--item"><a href="#pages/my-works">my works</a></li>
-						<li class="main-nav--item"><a href="#">blog</a></li>
-						<li class="main-nav--item"><a href="#pages/contact">contact</a></li>
+						<li class="main-nav--item"><a class="main-nav--anchor" href="#home">home</a></li>
+						<li class="main-nav--item"><a class="main-nav--anchor" href="#pages/about-me">about me</a></li>
+						<li class="main-nav--item"><a class="main-nav--anchor" href="#my-works">my works</a></li>
+						<li class="main-nav--item"><a class="main-nav--anchor" href="#">blog</a></li>
+						<li class="main-nav--item"><a class="main-nav--anchor" href="#contact">contact</a></li>
 					</ul>
 				</nav>
 				<!-- <ul class="social-media">
@@ -55,75 +55,100 @@
 					</section>
 				</div>
 				<div class="section">
-					<div class="slide" data-anchor="menu">
-						<section class="main-section" role="menu">
-							<div class="page">
-								<div class="page--content">
-									<ul class="main-nav">
-										<li><a class="page-lead-anchor" href="#pages/about-me">about me</a></li>
-										<li><a class="page-lead-anchor" href="#pages/my-works">my works</a></li>
-										<li><a class="page-lead-anchor" href="#">blog</a></li>
-										<li><a class="page-lead-anchor" href="#pages/my-works">contact</a></li>
-									</ul>
+					<section class="main-section" role="menu">
+						<div class="page">
+							<div class="page--content">
+								<ul class="main-nav">
+									<li><a class="page-lead-anchor" href="#pages/about-me">about me</a></li>
+									<li><a class="page-lead-anchor" href="#my-works">my works</a></li>
+									<li><a class="page-lead-anchor" href="#">blog</a></li>
+									<li><a class="page-lead-anchor" href="#contact">contact</a></li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</div>
+				<div class="section">
+					<section class="main-section" role="about-me">
+						<div class="about-me">
+								<div class="page">
+									<div class="page--content">
+										<h1 class="page-lead">about me</h1>
+										<p class="info-paragraph">
+											Minhas áreas favoritas surgiram para mim aos 11 anos. Sempre gostei de computadores, e foi pelo amor aos jogos e à internet que comecei a fazer meus primeiros layouts.
+										</p>
+										<p class="info-paragraph">
+											Juntando a experiência com edição – que adquiri por osmose na época - com o ânimo de colocar os sites de jogos na internet, descobri duas coisas que me fazem sentir bem: design e programação.
+										</p>
+									</div>
+									<div class="my-photo">
+										<img src="images/my-photo-bw.jpg" alt="This is me!">
+									</div>
 								</div>
 							</div>
-						</section>
-					</div>
-					<div class="slide" data-anchor="about-me">
-						<section class="main-section" role="about-me">
-							<div class="page">
-								<div class="page--content">
-									<h1 class="page-lead">about me</h1>
-									<p class="info-paragraph">
-										Minhas áreas favoritas surgiram para mim aos 11 anos. Sempre gostei de computadores, e foi pelo amor aos jogos e à internet que comecei a fazer meus primeiros layouts.
-									</p>
-									<p class="info-paragraph">
-										Juntando a experiência com edição – que adquiri por osmose na época - com o ânimo de colocar os sites de jogos na internet, descobri duas coisas que me fazem sentir bem: design e programação.
-									</p>
-								</div>
-								<div class="my-photo">
-									<img src="images/my-photo-bw.jpg" alt="This is me!">
-								</div>
-							</div>
-						</section>
-					</div>
-					<div class="slide" data-anchor="my-works">
+					</section>
+				</div>
+				<div class="section my-works">
+					<div class="slide" data-anchor="main">
 						<section class="main-section" role="my-works">
 							<div class="page">
-								<h1 class="page-lead">my works</h1>
 								<div class="page--content">
-									<div class="card-list">
-										<div class="card">
-											<div class="card__container">
-												<div class="card--img"></div>
-												<p class="card--description">
-													lorem ipsum
-												</p>
+									<h1 class="page-lead">my works</h1>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="slide" data-anchor="tvgloboapp">
+						<section class="main-section">
+							<div class="page">
+								<div class="page--content">
+									<div class="single-work">
+										<div class="single-work__container">
+											<header class="work-header">
+												<h1 class="page-lead">tvGloboApp</h1>
+												<div class="work-tags">
+													<span class="work-single-tag">HTML5</span>
+													<span class="work-single-tag">CSS3</span>
+													<span class="work-single-tag">jQuery</span>
+													<span class="work-single-tag">AngularJS</span>
+													<span class="work-single-tag">Stylus</span>
+													<span class="work-single-tag">Gulp</span>
+													<span class="work-single-tag">Jeet</span>
+													<span class="work-single-tag">Responsive Design</span>
+												</div>
+												<p class="work-description">O tvGloboApp é uma aplicação web que fiz como teste para uma vaga.</p>
+												<p class="work-description">A aplicação consome um arquivo .json com a grade de programação da TV Globo e exibe todos os programas e algumas de suas informações em uma página.</p>
+											</header>
+											<div class="work-preview">
+												<img class="work-preview-img" src="images/portfolio/tvgloboapp/main.png">
 											</div>
+											<a href="https://github.com/freeboxd/tvGloboApp" class="work-link">Projeto no GitHub</a>
 										</div>
-										<div class="card">
-											<div class="card__container">
-												<div class="card--img"></div>
-												<p class="card--description">
-													lorem ipsum
-												</p>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="slide" data-anchor="githubapi">
+						<section class="main-section">
+							<div class="page">
+								<div class="page--content">
+									<div class="single-work">
+										<div class="single-work__container">
+											<header class="work-header">
+												<h1 class="page-lead">Formulário de consulta da API do GitHub</h1>
+												<div class="work-tags">
+													<span class="work-single-tag">HTML5</span>
+													<span class="work-single-tag">CSS3</span>
+													<span class="work-single-tag">Bootstrap</span>
+													<span class="work-single-tag">AngularJS</span>
+												</div>
+												<p class="work-description">Aplicação simples em Angular que consome a API do Github feita para um teste.</p>
+											</header>
+											<div class="work-preview">
+												<img class="work-preview-img" src="images/portfolio/githubapi/main.png">
 											</div>
-										</div>
-										<div class="card">
-											<div class="card__container">
-												<div class="card--img"></div>
-												<p class="card--description">
-													lorem ipsum
-												</p>
-											</div>
-										</div>
-										<div class="card">
-											<div class="card__container">
-												<div class="card--img"></div>
-												<p class="card--description">
-													lorem ipsum
-												</p>
-											</div>
+											<a href="https://github.com/freeboxd/front-end-trabalhe-na-mad" class="work-link">Projeto no GitHub</a>
 										</div>
 									</div>
 								</div>
@@ -131,11 +156,40 @@
 						</section>
 					</div>
 				</div>
-				<div class="section">
+							<!-- <div class="card-list">
+								<div class="card">
+									<div class="card__container">
+										<img src="images/portfolio/tvgloboapp/main.png" class="card--img">
+										<p class="card--description">
+											lorem ipsum
+										</p>
+									</div>
+								</div>
+								<div class="card">
+									<div class="card__container">
+										<img src="images/portfolio/githubapi/main.png" class="card--img">
+										<p class="card--description">
+											lorem ipsum
+										</p>
+									</div>
+								</div>
+							</div> -->
+				<div class="section contact">
 					<section class="main-section" role="contact">
 						<div class="page">
-							<h1 class="page-lead">contact</h1>
+							<aside class="page-header">
+								<h1 class="page-lead">contact</h1>
+							</aside>
 							<div class="page--content">
+								<div class="single-contact">
+									<span class="contact-label">Email:</span>
+									<a class="contact-info" href="mailto:guinm3@gmail.com">guinm3@gmail.com</a>
+								</div>
+								<div class="single-contact">
+									<span class="contact-label">Phone number:</span>
+									<a class="contact-info">+55 (22) 99956-1384</a>
+								</div>
+								<!-- <p class="contact-text">Feel free to email me!</p> -->
 							</div>
 						</div>
 					</section>

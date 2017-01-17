@@ -18,7 +18,7 @@ var srcPaths = {
 	styl: 'src/styl/style.styl',
 	js: 'src/js/**/*.js',
 	data: 'src/js/data/**/*.json',
-	images: 'src/images/*',
+	images: 'src/images/**/*',
 	vendors: [
 	'node_modules/jquery/dist/jquery.min.js',
 	'node_modules/fullpage.js/dist/jquery.fullpage.min.js'

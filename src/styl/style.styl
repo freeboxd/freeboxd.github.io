@@ -1,3 +1,7 @@
+//
+// - core
+//=========================================
+
 @import '_variables'
 @import 'nib'
 @import 'vendors/jquery.fullpage.min.css'
@@ -10,10 +14,14 @@
 	padding 0
 	
 ::selection
-	background grey
+	background #969696
 
 html
 	font-size 16px
+	+mobile()
+		font-size 14px
+	+below(520px)
+		font-size 12px
 
 body
 	background black
@@ -21,37 +29,60 @@ body
 	font-family Droid Sans, Helvetica, sans-serif
 	a
 		text-decoration none
+		
+.black
+	color black !important
+
+//
+// - header
+//=========================================
 
 .header
 	position fixed
 	display block
 	width 100%
 	z-index 99
+	transition 150ms linear
 	&__container
 		align-items center
 		center(1200px)
 		display flex
 		position relative
-		
-.logo
+	+below(1200px)
+		padding 0 2rem
+				
+.logo-lg
 	margin -7rem auto 0
-	position relative
-	text-align center
 	width 13rem
 	height 13rem
+	.logo--letter
+		font-size 5rem
+		top 7rem
+	
+.logo-sm
+	margin -6rem auto 0
+	width 11rem
+	height 11rem
+	.logo--letter
+		font-size 4rem
+		top 6rem
+
+.logo
+	position relative
+	text-align center
+	transition 150ms linear
 	&__anchor
 		background transparent
 		position absolute
 		border-radius 50%
 		top 0
+		transition inherit
 		left 0
-		transition 150ms linear
 		height 100%
 		width 100%
 		&:hover
 			top .5rem
 		&:before
-			background white
 			border-radius 50%
 			content ''
 			position absolute
@@ -60,15 +91,24 @@ body
 			width 100%
 			z-index -1
 	&--letter
-		color black
 		font-family Playfair Display
-		font-size 5rem
 		font-weight bold
 		position absolute
-		top 7rem
 		left 0
 		right 0
 		z-index -1
+
+.logo-white
+	.logo__anchor:before
+		background white
+	.logo--letter
+		color black
+
+.logo-black
+	.logo__anchor:before
+		background black
+	.logo--letter
+		color white
 
 .lead-text
 	font-family Playfair Display
@@ -84,12 +124,17 @@ body
 	margin-top 1.2rem
 	&--item
 		display inline-block
-		a
-			color white
-			font-weight bold
-			margin-left 2rem
-			&:hover
-				text-decoration underline
+
+.main-nav--anchor
+	color white
+	font-weight bold
+	margin-left 2rem
+	transition 100ms linear
+	&:hover
+		text-decoration underline
+
+.main-nav--anchor-sm
+	font-size .9rem
 
 .social-media
 	flex 1
@@ -106,15 +151,11 @@ body
 .main-content
 	display block
 
+
 //
 // - main-content > presentation
 //=========================================
 	
-
-.main-section
-	center(1200px)
-	position relative
-
 .description
 	margin-top 4rem
 	text-align center
@@ -123,7 +164,8 @@ body
 		font-size 2rem
 	&__heading
 		background #191919
-		color #00ff5c
+		text-align center
+		color #00ffb8
 		display inline-block
 		font-family Open Sans, sans-serif
 		font-size 5rem
@@ -131,7 +173,6 @@ body
 		letter-spacing 1.5rem
 		text-transform uppercase
 		margin 0 -1.5rem .4rem 0
-		padding-left 1.5rem
 
 //
 // - main-content > content
@@ -158,24 +199,47 @@ body
 // - main-content > pages
 //=========================================
 
+.slide
+	overflow hidden
+	position relative
+
+.fp-tableCell
+	overflow hidden
+
+.main-section
+	center(1200px)
+		
+.page-header
+	flex .3
+	+below(760px)
+		margin 0 auto
+
 .page
 	align-items center
-	display flex
+	+above(760px)
+		display flex
+	+below(1200px)
+		padding 0 2rem
+	+below(760px)
+		text-align center
 
 .page-lead,
 .page-lead-anchor
-	color white
 	font-size 3rem
+		
 
 .page-lead-anchor
+	color black
 	font-weight bold
 	&:hover
-		color #00ff5c
+		color white
 		text-decoration underline
 
-.page--content
+.page--content,
+.card-list
 	flex 1
-	padding-left 3rem
+	padding 0 3rem
+	z-index 50
 
 .fp-table-cell
 	overflow none
@@ -186,17 +250,20 @@ body
 //
 // - main-content > about-me
 //=========================================
+
+.about-me
+	position relative
 	
 .my-photo
 	flex .5
-	right -35%
+	right -30%
 	position absolute
-	z-index -1
+	z-index 1
 	img
 		width 83%
 		border-radius 50%
-		// opacity .85
-
+	+below(1200px)
+		display none
 
 .info-paragraph
 	font-family Open Sans, sans-serif
@@ -204,26 +271,108 @@ body
 	font-weight lighter
 	line-height 2rem
 	margin-top 1rem
-	padding-right 25rem
-
+	+above(1200px)
+		padding-right 25rem
+	+below(1200px)
+		text-align center
 //
 // - main-content > my-works
 //=========================================
 
-// .card-list
-	// display flex
-		
+.my-works
+	color black !important
 
-.card
-	column(1/2, $gutter: 0)
-	height 14rem
+.single-work
+		text-align center
+	&__container
+		display flex
+		flex-wrap wrap
+		align-content flex-end
+		overflow hidden
+		// position relative
+
+.work-header
+	margin-top 8rem
+	text-align center
+	padding-bottom 2rem
+	+above(1200px)
+		padding-left 16%
+		padding-right 16%
+	+tablet()
+		padding-left 8%
+		padding-right 8%
+
+
+.work-tags
+	display inline-block
+	font-size .8rem
+	margin-top 1rem
+
+.work-single-tag
+	text-transform uppercase
+	&:not(:last-child)::after
+		content '/'
+		margin 0 .8rem
+		
+.work-preview
 	display block
-	// flex 1
-	// margin-bottom 2rem
-	// overflow hidden
-	&--img
-		// background grey
-		height 14rem
+	background grey
+	position relative
+
+.work-preview-img
+	width 100%
+
+.work-description
+	font-size 1.2rem
+	margin-top 1rem
+
+.work-link
+	background rgba(0,0,0,.75)
+	color white
+	font-weight bold
+	font-size .9rem
+	margin-bottom 2rem
+	padding 1.5rem 3rem
+	position absolute
+	text-transform uppercase
+	transition 150ms linear
+	bottom 0
+	z-index 96
+	&:hover
+		background rgba(0,0,0,1)
+
+//
+// - main-content > contact
+//=========================================
+
+.contact
+	color black !important
+
+.single-contact
+	display block
+	margin-bottom 2rem
+
+.contact-label,
+.contact-info,
+.contact-text
+	color black
+	font-family Open Sans, Helvetica, sans-serif
+	
+.contact-label
+	display block
+	// font-weight lighter
+	font-size 1.8rem
+
+.contact-info
+	font-size 2.5rem
+	font-weight lighter
+	&:hover
+		color #3e3e3e
+
+.contact-text
+	font-size 1.5rem
+	font-weight lighter
+	// margin-top .5rem
 
 //
 // - main-content > blog
