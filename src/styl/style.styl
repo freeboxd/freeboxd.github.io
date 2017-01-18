@@ -148,8 +148,9 @@ body
 .social-media
 	list-style none
 	
-.menu-icon
-	background white
+
+.menu-icon-white,
+.menu-icon-black
 	border-radius 0
 	border 0
 	cursor pointer
@@ -159,10 +160,11 @@ body
 	width 54px
 	height 54px
 	position relative
+
+.menu-icon
 	&__bars,
 	&__bars:before,
 	&__bars:after
-		background black
 		border-radius 5px
 		display block
 		width 38px
@@ -180,6 +182,20 @@ body
 		transform translate3d(0,11px,0)
 	+above(770px)
 		display none
+
+.menu-icon-white
+	background white
+	.menu-icon__bars,
+	.menu-icon__bars:before,
+	.menu-icon__bars:after
+		background black
+
+.menu-icon-black
+	background black
+	.menu-icon__bars,
+	.menu-icon__bars:before,
+	.menu-icon__bars:after
+		background white
 	
 //
 // - main-content

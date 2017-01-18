@@ -7,6 +7,7 @@ $(document).ready(function() {
 		return this.css('visibility', 'hidden');
 	};
 
+	var menuIcon = $('[data-trigger="menuIcon"]');
 
   $('#fullpage').fullpage({
 		// fixedElements: '.header',
@@ -53,25 +54,30 @@ $(document).ready(function() {
 				$('.main-nav--anchor').removeClass('black');
       }
 
+			if(anchorLink == 'my-works' || anchorLink == 'contact') {
+				menuIcon.addClass('menu-icon-black');
+				menuIcon.removeClass('menu-icon-white');
+			}
+
+			if(anchorLink == 'home' || anchorLink == 'about-me') {
+				menuIcon.addClass('menu-icon-white');
+				menuIcon.removeClass('menu-icon-black');
+			}
+
 			if(anchorLink == 'my-works') {
 				$.fn.fullpage.moveTo('my-works', 1);
 			}
 
 			if(anchorLink == 'pages') {
-				$('[data-trigger="openMenu"]').invisible();
+				menuIcon.invisible();
 			}
 			else {
-				$('[data-trigger="openMenu"]').visible();
+				menuIcon.visible();
 			}
-		},
-
-		onLeave : function(index, nextIndex, direction) {
-			// if(index == 1) {
-			// }
 		}
   });
 
-	$('[data-trigger="openMenu"]').on('click', function() {
+	menuIcon.on('click', function() {
 		$.fn.fullpage.silentMoveTo('pages');
 	});
 });
