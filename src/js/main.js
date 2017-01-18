@@ -1,4 +1,13 @@
 $(document).ready(function() {
+	jQuery.fn.visible = function() {
+		return this.css('visibility', 'visible');
+	};
+
+	jQuery.fn.invisible = function() {
+		return this.css('visibility', 'hidden');
+	};
+
+
   $('#fullpage').fullpage({
 		// fixedElements: '.header',
 		anchors : ['home', 'pages', 'about-me', 'my-works', 'contact'],
@@ -44,20 +53,24 @@ $(document).ready(function() {
 				$('.main-nav--anchor').removeClass('black');
       }
 
-      // ao abrir #pages (menu grande)
-      if(anchorLink == 'pages') {
-			// esconde menu-icon
-				$('[data-trigger="openMenu"]').hide();
-      }
-      else {
-				$('[data-trigger="openMenu"]').show();
-			}
-
 			if(anchorLink == 'my-works') {
 				$.fn.fullpage.moveTo('my-works', 1);
 			}
+
+			if(anchorLink == 'pages') {
+				$('[data-trigger="openMenu"]').invisible();
+			}
+			else {
+				$('[data-trigger="openMenu"]').visible();
+			}
+		},
+
+		onLeave : function(index, nextIndex, direction) {
+			// if(index == 1) {
+			// }
 		}
   });
+
 	$('[data-trigger="openMenu"]').on('click', function() {
 		$.fn.fullpage.silentMoveTo('pages');
 	});

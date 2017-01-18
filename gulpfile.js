@@ -67,7 +67,7 @@ gulp.task('js', function() {
 	gulp.src(srcPaths.js)
 	.pipe(plumber())
 	.pipe(concat('app.js'))
-	.pipe(uglify())
+	// .pipe(uglify())
 	.pipe(gulp.dest(buildPaths.js));
 });
 
